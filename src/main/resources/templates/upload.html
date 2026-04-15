@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p th:if="${success}" th:text="${success}" style="color: green"></p>
+    <p th:if="${error}" th:text="${error}" style="color: red"></p>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file" accept="image/*">
+        <button type="submit">Upload</button>
+    </form>
+
+    <div th:each="url : ${imageUrls}">
+        <img th:src="${url}" alt="">
+    </div>
+</body>
+</html>
