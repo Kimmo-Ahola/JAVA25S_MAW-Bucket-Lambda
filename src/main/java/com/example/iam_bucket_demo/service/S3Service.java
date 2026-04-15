@@ -55,6 +55,6 @@ public class S3Service {
                 .getObjectRequest(r -> r.bucket(bucket).key(objectKey))
                 .build();
 
-        return s3Presigner.presignGetObject(presignRequest).toString();
+        return s3Presigner.presignGetObject(presignRequest).url().toString();
     }
 }
